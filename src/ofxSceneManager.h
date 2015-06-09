@@ -44,6 +44,12 @@ class ofxSceneManager{
 		void mouseReleased(int x, int y, int button);
 		void windowResized(int w, int h);		
 		
+		//audio
+		void audioOut(float * output, int bufferSize, int nChannels, int deviceID, long unsigned long tickCount);
+		void audioOut(float * output, int bufferSize, int nChannels);
+		void audioIn(float * input, int bufferSize, int nChannels, int deviceID, long unsigned long tickCount);
+		void audioIn(float * input, int bufferSize, int nChannels);
+
 		//touch events - ios
 		#ifdef TARGET_OF_IPHONE
 		void touchDown(ofTouchEventArgs &touch);

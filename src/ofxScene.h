@@ -54,6 +54,12 @@ class ofxScene{
 		virtual void mouseReleased(int x, int y, int button) {};
 		virtual void windowResized(int w, int h){};
 
+		//audio
+		virtual void audioOut(float * output, int bufferSize, int nChannels, int deviceID, long unsigned long tickCount) {};
+		virtual void audioOut(float * output, int bufferSize, int nChannels) {};
+		virtual void audioIn(float * input, int bufferSize, int nChannels, int deviceID, long unsigned long tickCount) {};
+		virtual void audioIn(float * input, int bufferSize, int nChannels) {};
+
 		//touch events - iphone
 		#ifdef TARGET_OF_IPHONE
 		virtual void touchDown(ofTouchEventArgs &touch){};

@@ -275,6 +275,19 @@ void ofxSceneManager::windowResized (int w, int h){
 	}
 }
 
+void ofxSceneManager::audioOut(float * output, int bufferSize, int nChannels, int deviceID, long unsigned long tickCount){
+	if (currentScene != NULL) currentScene->audioOut(output, bufferSize, nChannels, deviceID, tickCount);
+}
+void ofxSceneManager::audioOut(float * output, int bufferSize, int nChannels){
+	if (currentScene != NULL) currentScene->audioOut(output, bufferSize, nChannels);
+}
+void ofxSceneManager::audioIn(float * input, int bufferSize, int nChannels, int deviceID, long unsigned long tickCount){
+	if (currentScene != NULL) currentScene->audioIn(input, bufferSize, nChannels, deviceID, tickCount);
+}
+void ofxSceneManager::audioIn(float * input, int bufferSize, int nChannels){
+	if (currentScene != NULL) currentScene->audioIn(input, bufferSize, nChannels);
+}
+
 #ifdef TARGET_OF_IPHONE
 void ofxSceneManager::touchDown(ofTouchEventArgs &touch){
 	if (currentScene != NULL) currentScene->touchDown( touch );
